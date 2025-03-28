@@ -1,0 +1,18 @@
+function upDate(previewPic) {
+    // Проверяем, сработало ли событие
+    console.log("Event triggered");
+    console.log("Image src: ", previewPic.src);
+    console.log("Image alt: ", previewPic.alt);
+
+    // Обновляем текст и фон
+    let imageDiv = document.getElementById("image");
+    imageDiv.style.backgroundImage = `url('${previewPic.src}')`;
+    imageDiv.innerHTML = previewPic.alt;
+}
+
+function undo() {
+    // Возвращаем исходные значения
+    let imageDiv = document.getElementById("image");
+    imageDiv.style.backgroundImage = "url('')";
+    imageDiv.innerHTML = "Hover over an image below to display here.";
+}
